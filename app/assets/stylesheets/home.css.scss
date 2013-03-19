@@ -57,9 +57,14 @@ $lightText: #fdefef;
 	padding: 75px 0;
 }
 
-#map {
+#where {
 
 	height: 530px;
+
+	#map-canvas {
+		width: 100%;
+		height: 100%
+	}
 
 	.mapbox {
 		background-color: $mainColor;
