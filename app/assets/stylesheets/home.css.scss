@@ -6,11 +6,22 @@
 $mainColor: #fa4e50;
 $lightText: #fdefef;
 
+@mixin large-font {
+ 	//font-family: 'Paytone One', sans-serif;
+ 	//font-family: 'Bowlby One', cursive;
+	//font-family: 'Bangers', cursive; 	
+	font-family: 'Titan One', cursive;
+	letter-spacing: 2px;
+	font-size: emCalc(70px);
+ 	font-weight: 100;
+ }
+
+
 .left{float: left;}
 .left{float: right;}
 
 .section-title {
-
+	@include large-font;
 }
 
 #welcome { 
@@ -27,23 +38,28 @@ $lightText: #fdefef;
   }
 
   #headline {
-
+	margin-top: 40px;
+	margin-bottom: 0;
+	text-align: center;
+	@include large-font;
+	font-size: 4.275em;
   }
 
   #sub-headline {
-	font-weight: 200;
-	font-size: emCalc(20px);
+	font-size: emCalc(24px);
+	text-align: center;
   }
 
   #logo{
-  	height: 300px;
-  	width: 200px;
+  	background: image-url('logo.png') no-repeat;
+  	height: 335px;
+  	width: 335px;
+  	margin-top: 50px;
   }
 
   button {
 	@include button(0em, $mainColor, 0, emCalc(155px), false, true);
 	float: left;
-	font-weight: 100;
 	height: emCalc(36px);
 	width: emCalc(155px);
   }
@@ -54,7 +70,12 @@ $lightText: #fdefef;
 	background-color: $mainColor;
 	height: 355px;
 	width: 100%;
-	padding: 75px 0;
+	padding: 60px 0;
+
+	.section-title {
+		font-size: emCalc(71px);
+		color: $lightText;
+	}
 }
 
 #where {
@@ -69,8 +90,16 @@ $lightText: #fdefef;
 	.mapbox {
 		background-color: $mainColor;
 		padding: 10px;
-		height: 100px;
-		width: 100px;
+		height: 300px;
+		width: 400px;
+		position: absolute;
+		margin-top: -400px;
+		z-index: 1002;
+		color: $lightText;
+
+		.section-title {
+			color: $lightText;
+		}
 	}
 }
 
@@ -82,13 +111,18 @@ footer {
 
 	.menu {
 	text-transform: uppercase;
-	font-weight: 400;
 	font-size: emCalc(14px);
 
-	li {
-		list-style-type: none;
-		padding-right: 20px;
-		display: inline;
+		li {
+			list-style-type: none;
+			padding-right: 20px;
+			display: inline;
+			color: $lightText;
+		
+		}
 	}
-}
+
+	.copyright {
+		color: $lightText;
+	}
 }

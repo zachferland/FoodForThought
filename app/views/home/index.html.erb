@@ -7,7 +7,9 @@
         var mapOptions = {
           center: new google.maps.LatLng(-34.397, 150.644),
           zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+          noClear: true
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
@@ -51,7 +53,7 @@
 </section>
 
 <section id="where">
-	<div id="map-canvas">
+	<div id="map-canvas"></div>
 		<div class="row">
 			<div class="mapbox">
 				<h2 class="section-title">Where</h2>
@@ -59,7 +61,7 @@
 				<h6 class="address"></h6>
 			</div>
 		</div>
-	</div>
+	
 </section>
 
 <footer id="footer">
@@ -73,8 +75,8 @@
 			</ul>
 		</div>
 
-		<div class="copyright right">
-			<p>Copyright © 2013 Food For Thought Boston</p>
+		<div class="right">
+			<p class="copyright" >Copyright © 2013 Food For Thought Boston</p>
 		</div>
 	</div>
 </footer>
