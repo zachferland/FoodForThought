@@ -5,8 +5,9 @@
     <script type="text/javascript">
       function initialize() {
         var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
+          center: new google.maps.LatLng(
+42.347063, -71.081243),
+          zoom: 14,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           scrollwheel: false,
           noClear: true
@@ -20,13 +21,14 @@
 
 <section id="welcome">
 	<div class="row">
-		<div id="logo" class="small-5 small-centered columns"></div>
+		<div id="logo" class="small-5 small-centered columns"><%= image_tag("logo.png", :alt => "twitter") %></div>
 		<div class="small-11 small-centered columns headlines">
 			<h1 id="headline">Food For Thought</h1>
 			<h2 id="sub-headline">Casual conversations over dinner with 	entrepreneurs</h2>
 			<div class="button-bar">
-				<button id="invite button"> Request Invitation</button>
-				<button id="invited button">Request Invitation</button>
+				<button id="invite button left"> Request An Invitation</button>
+				<p id='or' class="left">- OR -</p>
+				<button id="invited button left">Enter Invite Number</button>
 			</div>
 		</div>
 	</div>
@@ -35,18 +37,25 @@
 <section id="upcoming">
 	<div class="row">
 
-		<div class="small-4 columns">
+		<div class="small-12 large-4 columns">
 			<h2 class="section-title">Upcoming Events</h2>
 		</div>
 		
-		<div class="small-8 columns">
+		<div class="small-12 large-8 columns">
 			<div class="entrprnr">
-				<div class="img"></div>
-				<h3 class="name">
-					<span class="title"></span>
-				</h3>
-				<h6 class="des"></h6>
-				<div class="social"></div>
+				<div class="imgtag circular left"></div>
+				<div class="left">
+					<h3 class="name left">
+						Paul English
+						<span class="title"> CTO Kayak</span>
+					</h3>
+					<h6 class="des"></h6>
+					<div class="social left">
+						<a href="twitter.com"> <%= image_tag("twitter.png", :alt => "twitter") %></a>
+						<a href="gplus.com"> <%= image_tag("gplus.png", :alt => "twitter") %></a>
+						<a href="facebook.com"> <%= image_tag("facebook.png", :alt => "twitter") %></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -57,8 +66,9 @@
 		<div class="row">
 			<div class="mapbox">
 				<h2 class="section-title">Where</h2>
-				<h4 class="place">Five asfNapkin</h4>
-				<h6 class="address"></h6>
+				<h4 class="place">Five Napkin Burger</h4>
+				<h6 class="address street">105 Huntington Avenue</h6>
+				<h6 class="address city">Boston, MA 02199</h6>
 			</div>
 		</div>
 	
@@ -68,15 +78,15 @@
 	<div class="row">
 		<div class="menu left">
 			<ul>
-				<li>Hello</li>
-				<li>Hello</li>
-				<li>Hello</li>
-				<li>Hello</li>
+				<li>Invitation</li>
+				<li>Next Event</li>
+				<li>Past Events</li>
+				<li>About</li>
 			</ul>
 		</div>
 
 		<div class="right">
-			<p class="copyright" >Copyright © 2013 Food For Thought Boston</p>
+			<p class="copyright" >© 2013 Food For Thought Boston</p>
 		</div>
 	</div>
 </footer>

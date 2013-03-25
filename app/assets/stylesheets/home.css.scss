@@ -14,6 +14,11 @@ $lightText: #fdefef;
 	letter-spacing: 2px;
 	font-size: emCalc(70px);
  	font-weight: 100;
+ 	text-transform: uppercase;
+ }
+
+ @mixin center {
+ 	margin: 0 auto 0 auto;
  }
 
 
@@ -24,13 +29,23 @@ $lightText: #fdefef;
 	@include large-font;
 }
 
+.circular {
+	$side: 180px;
+	width: $side;
+	height: $side;
+	border-radius: ($side/2);
+	-webkit-border-radius: ($side/2);
+	-moz-border-radius: ($side/2);
+	background: image-url('profile.png') no-repeat;
+}
+
 #welcome { 
   background: image-url('bg.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 780px;
+  min-height: 780px;
 
   #headline, #sub-headline {
   	color: $lightText;
@@ -46,14 +61,22 @@ $lightText: #fdefef;
   }
 
   #sub-headline {
-	font-size: emCalc(24px);
+	font-size: 1.28em;
 	text-align: center;
+	font-weight: 100;
+	letter-spacing: 3px;
+	margin-top: 0;
   }
 
   #logo{
-  	background: image-url('logo.png') no-repeat;
   	height: 335px;
   	width: 335px;
+  	margin-top: 50px;
+  }
+
+  .button-bar {
+  	@include center;
+  	width: 702px;
   	margin-top: 50px;
   }
 
@@ -62,6 +85,21 @@ $lightText: #fdefef;
 	float: left;
 	height: emCalc(36px);
 	width: emCalc(155px);
+	border: none;
+	width: 300px;
+	height: 50px;
+	text-transform: uppercase;
+	font-weight: 100;
+	letter-spacing: 3px;
+  }
+
+  #or {
+  	color: $lightText;
+  	font-size: 1em;
+	text-align: center;
+	font-weight: 100;
+	letter-spacing: 3px;
+	margin: 12px 22px 0 22px;
   }
 
 }
@@ -73,8 +111,37 @@ $lightText: #fdefef;
 	padding: 60px 0;
 
 	.section-title {
-		font-size: emCalc(71px);
+		font-size: 4em;
 		color: $lightText;
+		margin-top: 30px;
+		display: block;
+	}
+
+	.entrprnr {
+		margin: 30px 0 0 115px;
+
+		.name {
+			margin: 40px 0 0 40px;
+			color: $lightText;
+  			font-size: 1.3em;
+			font-weight: 200;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+
+			span {
+				font-style: italic;
+				font-weight: 100;
+				font-size: 0.8em;
+			}
+		}
+
+		.social {
+			margin: 25px 0 0 40px;
+
+			img {
+				margin-right: 10px;
+			}
+		}
 	}
 }
 
@@ -90,15 +157,35 @@ $lightText: #fdefef;
 	.mapbox {
 		background-color: $mainColor;
 		padding: 10px;
-		height: 300px;
+		height: auto;
 		width: 400px;
 		position: absolute;
 		margin-top: -400px;
 		z-index: 1002;
 		color: $lightText;
+		padding: 15px 15px 35px 15px;
 
 		.section-title {
 			color: $lightText;
+			font-size: 4em;
+			margin: 0 0 0 20px;
+			color: inherit;
+		}
+
+		.place {
+			text-transform: uppercase;
+			color: inherit;
+			font-weight: 100;
+			letter-spacing: 3px;
+			margin: 25px 0 21px 20px;
+		}
+
+		.address {
+			color: inherit;
+			margin: 10px 0 0 20px;
+			font-weight: 200;
+			letter-spacing: 1.5px;
+			line-height: 85%;
 		}
 	}
 }
@@ -118,11 +205,102 @@ footer {
 			padding-right: 20px;
 			display: inline;
 			color: $lightText;
-		
+			font-weight: 100;
+			letter-spacing: 2px;
 		}
 	}
 
 	.copyright {
 		color: $lightText;
+		font-weight: 200;
 	}
+}
+
+
+// MOBILE
+
+
+@media only screen and (max-width: 768px) {
+
+	#welcome { 
+		height: 900px;
+	
+	 	#headline {
+			font-size: 3.8em;
+	 	}
+	
+	 	#sub-headline {
+			margin-top: 10px;
+	 	}
+	
+	 	#logo{
+	 		height: auto;
+	 		width: 70%;
+	 		margin-top: 50px;
+	 	}
+	
+	 	.button-bar {
+	 		@include center;
+	 		width: 100%;
+	 		margin-top: 50px;
+	 	}
+	
+	 	button {
+			width: 80%;
+			margin-left: 10%;
+			margin-right: 10%;
+	 	}
+	
+	 	#or {
+	 		@include grid-column(12);
+	 		@include center;
+	 		margin-bottom: 12px;
+	 	}
+	}
+
+	
+
+	#upcoming{
+	height: auto;
+	width: 100%;
+	padding: 30px 0;
+
+	.section-title {
+		font-size: 3em;
+	}
+
+	.entrprnr {
+		margin: 30px 10% 0 10%;
+
+		.img {
+			margin: 0 auto;
+		}
+
+
+		.name {
+			margin: 40px 0 0 40px;
+			color: $lightText;
+  			font-size: 1.3em;
+			font-weight: 200;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+
+			span {
+				font-style: italic;
+				font-weight: 100;
+				font-size: 0.8em;
+			}
+		}
+
+		.social {
+			margin: 25px 0 0 40px;
+
+			img {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+	
 }
