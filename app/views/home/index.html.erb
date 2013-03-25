@@ -10,7 +10,8 @@
           zoom: 14,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           scrollwheel: false,
-          noClear: true
+          noClear: true,
+          draggable: false
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
@@ -43,8 +44,8 @@
 		
 		<div class="small-12 large-8 columns">
 			<div class="entrprnr">
-				<div class="imgtag circular left"></div>
-				<div class="left">
+				<div class="imgtag circular left small-12 large-4  columns"></div>
+				<div class="small-12 large-8 columns holder">
 					<h3 class="name left">
 						Paul English
 						<span class="title"> CTO Kayak</span>
@@ -76,16 +77,16 @@
 
 <footer id="footer">
 	<div class="row">
-		<div class="menu left">
+		<div class="menu left small-12 large-8  ">
 			<ul>
 				<li>Invitation</li>
-				<li>Next Event</li>
+				<li class="hide-for-small">Next Event</li>
 				<li>Past Events</li>
 				<li>About Us</li>
 			</ul>
 		</div>
 
-		<div class="right">
+		<div class="right small-12 large-4 ">
 			<p class="copyright" >© 2013 Food For Thought Boston</p>
 		</div>
 	</div>

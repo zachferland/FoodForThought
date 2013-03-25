@@ -160,7 +160,7 @@ $lightText: #fdefef;
 		height: auto;
 		width: 400px;
 		position: absolute;
-		margin-top: -400px;
+		margin-top: -375px;
 		z-index: 1002;
 		color: $lightText;
 		padding: 15px 15px 35px 15px;
@@ -193,12 +193,15 @@ $lightText: #fdefef;
 
 footer {
 	background-color: $mainColor;
-	height: 115px;
+	min-height: 115px;
+	max-height: 155px;
 	padding-top: 55px;
+	height: auto;
 
 	.menu {
 	text-transform: uppercase;
 	font-size: emCalc(14px);
+	display: block;
 
 		li {
 			list-style-type: none;
@@ -213,6 +216,7 @@ footer {
 	.copyright {
 		color: $lightText;
 		font-weight: 200;
+		display: block;
 	}
 }
 
@@ -272,8 +276,15 @@ footer {
 	.entrprnr {
 		margin: 30px 10% 0 10%;
 
-		.img {
-			margin: 0 auto;
+		.imgtag {
+			margin: 0 auto 0 auto;
+			width: 180px;
+			display: block;
+			@extend .small-centered;
+		}
+
+		.holder {
+			@extend .small-centered;
 		}
 
 
@@ -304,3 +315,12 @@ footer {
 
 	
 }
+
+@media only screen and (max-width: 575px) {
+
+	#where .mapbox {
+		width: 100%;
+	}
+
+
+}	
