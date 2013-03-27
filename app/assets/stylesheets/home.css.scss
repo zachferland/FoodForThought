@@ -17,6 +17,13 @@ $lightText: #fdefef;
  	text-transform: uppercase;
  }
 
+ @mixin full-center {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	float: none !important;
+ }
+
  @mixin center {
  	margin: 0 auto 0 auto;
  }
@@ -240,7 +247,9 @@ footer {
 	 	#logo{
 	 		height: auto;
 	 		width: 70%;
-	 		margin-top: 50px;
+	 		@include full-center;
+	 		max-height: 335px;
+  			max-width: 335px;
 	 	}
 	
 	 	.button-bar {
@@ -262,58 +271,59 @@ footer {
 	 	}
 	}
 
-	
-
 	#upcoming{
-	height: auto;
-	width: 100%;
-	padding: 30px 0;
-
-	.section-title {
-		font-size: 3em;
-	}
-
-	.entrprnr {
-		margin: 30px 10% 0 10%;
-
-		.imgtag {
-			margin: 0 auto 0 auto;
-			width: 180px;
-			display: block;
-			@extend .small-centered;
+		height: auto;
+		width: 100%;
+		padding: 30px 0;
+	
+		.section-title {
+			font-size: 3em;
+			@include full-center;
+			text-align: center;
 		}
-
-		.holder {
-			@extend .small-centered;
-		}
-
-
-		.name {
-			margin: 40px 0 0 40px;
-			color: $lightText;
-  			font-size: 1.3em;
-			font-weight: 200;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-
-			span {
-				font-style: italic;
-				font-weight: 100;
-				font-size: 0.8em;
+	
+		.entrprnr {
+			margin: 30px 10% 0 10%;
+	
+			.imgtag {
+				width: 180px;
+				display: block;
+				@include full-center;
 			}
-		}
-
-		.social {
-			margin: 25px 0 0 40px;
-
-			img {
-				margin-right: 10px;
+	
+			.holder {
+				@include full-center;
+			}
+	
+	
+			.name {
+				margin: 40px 0 0 40px;
+				color: $lightText;
+  				font-size: 1.3em;
+				font-weight: 200;
+				letter-spacing: 3px;
+				text-transform: uppercase;
+	
+				span {
+					font-style: italic;
+					font-weight: 100;
+					font-size: 0.8em;
+				}
+			}
+	
+			.social {
+				margin: 25px 0 0 40px;
+	
+				img {
+					margin-right: 10px;
+				}
 			}
 		}
 	}
 }
 
-	
+#footer {
+	padding-left: 20px;
 }
 
 @media only screen and (max-width: 575px) {
@@ -321,6 +331,13 @@ footer {
 	#where .mapbox {
 		width: 100%;
 	}
+}
+
+@media only screen and (max-width: 650px) {
+
+	#welcome .headline {
+		font-size: 3em;
+	}
+}
 
 
-}	
