@@ -1,5 +1,4 @@
-
- <script type="text/javascript"
+<script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChEYZ4UTCkMwVqW7pQtrNxm55pbPu0hnw&sensor=true">
     </script>
     <script type="text/javascript">
@@ -21,6 +20,17 @@
 
 
 <section id="welcome">
+
+    <div id="user_nav">
+  		<% if current_user %>
+    		Signed in as <strong><%= current_user.name %></strong>!
+    	<%= link_to "Sign out", signout_path, :id  => "sign_out" %>
+  		<% else %>
+    	<%= link_to "Sign in with Facebook", "/auth/facebook", :id  => "sign_in" %>
+  	<% end %>
+	</div>
+
+
 	<div class="row">
 		<div id="logo" class="small-5 small-centered columns"><%= image_tag("logo.png", :alt => "twitter") %></div>
 		<div class="small-11 small-centered columns headlines">
