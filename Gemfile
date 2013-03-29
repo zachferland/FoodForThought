@@ -6,7 +6,7 @@ gem 'pg'
 
 gem 'google-webfonts'
 
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 
 
 group :development do

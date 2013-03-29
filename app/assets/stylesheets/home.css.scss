@@ -198,7 +198,7 @@ $lightText: #fdefef;
 }
 
 
-footer {
+#footer {
 	background-color: $mainColor;
 	min-height: 115px;
 	max-height: 155px;
@@ -206,9 +206,9 @@ footer {
 	height: auto;
 
 	.menu {
-	text-transform: uppercase;
-	font-size: emCalc(14px);
-	display: block;
+		text-transform: uppercase;
+		font-size: emCalc(14px);
+		display: block;
 
 		li {
 			list-style-type: none;
